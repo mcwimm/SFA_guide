@@ -1,0 +1,7 @@
+---
+title: "Getting started"
+---
+
+SFA can be initialized in two different ways: Comment Suggest edit Edit from here
+
+by manually creating a local copy of the github repository, by launching the app via an R wrapper function. Both methods require the free software R and the R-package ‘shiny’ (version 1.5 or higher, Chang et al., 2020). To install and load the package, run the following two lines of code in an R script:

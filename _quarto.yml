@@ -1,0 +1,31 @@
+project:
+  type: website
+  resources:
+    - /assets
+    
+website:
+  title: "SFA User Guide"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - launch.qmd
+      - section: "App navigation"
+        contents:
+          - settings.qmd
+          - data.qmd
+          - settings.qmd
+          - kvalue.qmd
+          - sapflow.qmd
+          - uncertainty.qmd
+      - trouble.qmd
+      - recommendations.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

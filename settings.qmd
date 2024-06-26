@@ -1,0 +1,5 @@
+---
+title: "Settings"
+---
+
+In the second menu item, the project settings are defined. All project settings are optional but strongly recommended for the efficient use of the SFA.

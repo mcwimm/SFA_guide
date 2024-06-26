@@ -1,0 +1,21 @@
+---
+title: "Data"
+---
+
+The ‘data’ menu item is divided in three subsections: upload, filter and view.
+
+# Upload
+## Box Upload file
+
+To upload a csv file browse to the directory where the file is stored (**<1>**).
+Select the input file type (**<2>**), the separator and the number of lines to skip (**<3>**).
+If the upload is successful, the box `Preview data` shows a table with data.
+To confirm the usage of the file click ‘Use data’ (**<4>**).
+Afterwards, the file name is shown in the upper right corner of the SFA.
+If the data is not shown correctly, open the csv-file externally and check the required column names (Table 1) and the csv-settings (i.e., comma delimited, tab delimited, etc.).
+
+![](assets/images/data_upload.png){width=400 fig-align="left"}
+
+# Filter
+
+# View

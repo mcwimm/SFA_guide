@@ -1,0 +1,5 @@
+---
+title: "K parameter"
+---
+
+The ‘data’ menu item is divided in three subsections: upload, filter and view.
