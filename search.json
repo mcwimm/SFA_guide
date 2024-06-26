@@ -1,0 +1,63 @@
+[
+  {
+    "objectID": "settings.html",
+    "href": "settings.html",
+    "title": "Settings",
+    "section": "",
+    "text": "In the second menu item, the project settings are defined. All project settings are optional but strongly recommended for the efficient use of the SFA.",
+    "crumbs": [
+      "App navigation",
+      "Settings"
+    ]
+  },
+  {
+    "objectID": "kvalue.html",
+    "href": "kvalue.html",
+    "title": "K parameter",
+    "section": "",
+    "text": "The ‘data’ menu item is divided in three subsections: upload, filter and view.",
+    "crumbs": [
+      "App navigation",
+      "K parameter"
+    ]
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
+    "section": "",
+    "text": "The ‘data’ menu item is divided in three subsections: upload, filter and view.",
+    "crumbs": [
+      "App navigation",
+      "Data"
+    ]
+  },
+  {
+    "objectID": "data.html#box-upload-file",
+    "href": "data.html#box-upload-file",
+    "title": "Data",
+    "section": "Box Upload file",
+    "text": "Box Upload file\nTo upload a csv file browse to the directory where the file is stored (&lt;1&gt;). Select the input file type (&lt;2&gt;), the separator and the number of lines to skip (&lt;3&gt;). If the upload is successful, the box Preview data shows a table with data. To confirm the usage of the file click ‘Use data’ (&lt;4&gt;). Afterwards, the file name is shown in the upper right corner of the SFA. If the data is not shown correctly, open the csv-file externally and check the required column names (Table 1) and the csv-settings (i.e., comma delimited, tab delimited, etc.).",
+    "crumbs": [
+      "App navigation",
+      "Data"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SFA User Guide",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "launch.html",
+    "href": "launch.html",
+    "title": "Getting started",
+    "section": "",
+    "text": "SFA can be initialized in two different ways: Comment Suggest edit Edit from here\nby manually creating a local copy of the github repository, by launching the app via an R wrapper function. Both methods require the free software R and the R-package ‘shiny’ (version 1.5 or higher, Chang et al., 2020). To install and load the package, run the following two lines of code in an R script:",
+    "crumbs": [
+      "Getting started"
+    ]
+  }
+]
