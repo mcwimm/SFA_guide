@@ -1,6 +1,8 @@
 ---
-title: "Visualization"
+title: "General"
 ---
+
+# Visualization
 
 All produced figures can be downloaded. The format is either jpeg, rdata or pdf and is defined under ‘Settings \> File output \> Figure format’. A general figure title and appendix to figure files can be defined under ‘Figure title’ and ‘File appendix’ in the same box. The style of figures can be customized under ‘Settings \> Visualization’. Downloading figures as rdata file allows to load the figure-object to the R environment again and process the figure according to user demands.
 
@@ -18,3 +20,8 @@ For some figures, special settings are available. An explanation to those option
 -   **Scales**
     -   **Free** x and y scale is free
     -   **Fixed** x and/ or y scale can be customized
+    
+    
+# Downloads
+
+Files and images can be downloaded one at a time using the individual download buttons, or all at once using the Download button in the menu to the left.

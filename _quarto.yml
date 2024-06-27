@@ -10,13 +10,14 @@ website:
     search: true
     contents:
       - launch.qmd
-      - section: "App navigation"
+      - section: "SFA navigation"
         contents:
           - settings.qmd
           - data.qmd
           - kvalue.qmd
           - sapflow.qmd
           - uncertainty.qmd
+      - general.qmd
       - trouble.qmd
       - recommendations.qmd
 
