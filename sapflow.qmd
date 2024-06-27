@@ -1,0 +1,23 @@
+---
+title: "Sap Flow"
+---
+
+# Sap Flow Metrics
+
+This menu item shows sap flow metrics as diurnal flow and as radial profile. What is shown in box `Figures` needs to be defined in box `Settings`.
+
+In the drop down menu ‘y-axis’ (box `Settings`), the user can choose which metric is shown, namely sap flow index (SFI), sap flow per section (SFS) or sap flow density (SFD). The style options define the appearance of the figure, i.e. whether all data is presented in one figure (‘Normal’), in different panels for thermometer position or day of the year (‘Facet wrap’) or if thermometers should be grouped. In the latter case, names of the groups and the associated thermometer positions must be provided.
+
+The radio buttons under ‘SFS-formula’ define which formula is used to calculate SFS and hence, SFD. Detailed information on the use of those formulas is given in [Nadezhdina and Nadezhdin, 2017](https://doi.org/10.1016/j.envexpbot.2017.04.005) and *Wimmler et al. (submitted)*. If the radio button ‘Negative’ is chosen, the negative formula is applied to each recording with SFI below a certain threshold. The default threshold for all thermometer positions is 0°C but can be customized either with a general threshold or for each thermometer position individually.
+
+
+## Tree Water Use
+
+Sap flow rate and daily tree water can be calculated using three different upscaling methods (box `Settings`, methods are described in Wimmler et al. 2022). Upscaling is based on sap wood depth, thus the correct definition of wood properties is essential (Settings \> Measuring environment \> Wood properties).
+
+The tab ‘Diurnal pattern’ shows the total sap flow rate of a tree (or stem) over time, while tabs ‘Daily balance’ and ‘Radial profile’ show the total tree water use, which is calculated as the area under the curve of the sap flow rate (box `Figures`).
+
+The tree water use per day is shown in the table in box `Tree water use`.
+
+
+

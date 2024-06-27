@@ -2,4 +2,42 @@
 title: "Settings"
 ---
 
-In the second menu item, the project settings are defined. All project settings are optional but strongly recommended for the efficient use of the SFA.
+The second menu item defines the project settings. All project settings are optional, but highly recommended for efficient use of SFA.
+
+## Box: Measuring environment
+
+In this section of the application, the user defines the wood and sensor properties. Wood and sensor properties are critical to the calculation of SFD, SF, or TWU because they determine the position of each thermometer.
+
+Wood properties describe, among other things, the stem geometry used to estimate thermometer positions. If known, accurate sapwood and heartwood depth measurements can be provided and used instead. Sensor properties describe needle spacing and needle penetration depth.
+
+![](assets/images/settings_measure_1.png){width="400"}
+
+The calculated positions are displayed at the bottom of this box.
+
+![](assets/images/settings_measure_2.png){width="400"}
+
+Thermometer positions can also be defined manually.
+
+The definition of wood and sensor properties is only required, if the recordings are scaled to SFD, SF or TWU.
+
+## Box: Save settings
+
+Settings made on this page can be saved as R data file (.rds) and reused later (see #Data).
+
+## Box: Project
+
+The user can create a project where all data will be stored during the session. This is done by selecting a project directory.
+
+To create a project, press 'Folder select' to browse to the directory where all project files will be stored. Select a volume to browse (on Windows this is usually the working directory and the main drive, **\<1\>**). Select a project destination folder by clicking it's name (**\<2\>**). You can also create a new subfolder by clicking **\<3\>**, entering a name and confirming by clicking the plus sign **\<4\>**. Finally, select the folder by clicking on 'select' **\<5\>**.
+
+![](assets/images/settings_project.png)
+
+After selecting a project destination folder, press 'Create/set project'. The application will automatically create two subdirectories: 'graphics' and 'csv-files', where all processed files will be saved. If no project is created, all results (csv-files and graphics) will be saved in the root directory of the application, which may be in the temporary data. If the project was created successfully, the project name is displayed in the upper right corner of the SFA. The path to the project directory will be displayed. If no project was created, the path to the root directory is displayed.
+
+## Box: File output (optional)
+
+File Output box allows the user to define - the format in which data files will be exported (csv, xls) - Note that these files will be saved in the csv file project folder regardless of the selected format. - the format in which images will be saved (jpeg, rdata, pdf). - the format in which all processed data files are exported (csv or excel, they are saved in the csv files folder of the project). - a title added to each saved image, e.g. the tree species studied - a prefix added to the name of each saved file
+
+## Box: Visualization (optional)
+
+In the Visualization box, you can define a scheme ([Wickham, 2016](https://doi.org/10.1007/978-0-387-98141-3)) and a [viridis color palette](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) to be used in all graphics.

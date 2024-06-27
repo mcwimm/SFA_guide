@@ -1,0 +1,20 @@
+---
+title: "Visualization"
+---
+
+All produced figures can be downloaded. The format is either jpeg, rdata or pdf and is defined under ‘Settings \> File output \> Figure format’. A general figure title and appendix to figure files can be defined under ‘Figure title’ and ‘File appendix’ in the same box. The style of figures can be customized under ‘Settings \> Visualization’. Downloading figures as rdata file allows to load the figure-object to the R environment again and process the figure according to user demands.
+
+For some figures, special settings are available. An explanation to those options is listed below.
+
+-   **Facet wrap** Shows subsets of data presented in individual panels
+    -   **Facet** variable that is arranged in different panels, e.g. day of the year or thermometer positions
+    -   **No. colums** Number of columns presented in one row
+    -   **Scales** Description by ([Wickham, Navarro and Pedersen, 2022](https://ggplot2-book.org/index.html))
+        -   “scales = "fixed": x and y scales are fixed across all panels.
+        -   scales = "free_x": the x scale is free, and the y scale is fixed.
+        -   scales = "free_y": the y scale is free, and the x scale is fixed.
+        -   scales = "free": x and y scales vary across panels.”
+-   **Facet grid** Similar to facet wrap. Presents data as 2d grid, defined by two variables.
+-   **Scales**
+    -   **Free** x and y scale is free
+    -   **Fixed** x and/ or y scale can be customized

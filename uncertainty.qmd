@@ -1,0 +1,16 @@
+---
+title: "Uncertainty"
+---
+
+# Individual
+
+This section allows to estimate the uncertainty of the sap flow metrics caused by the following inputs individually: thermal diffusivity (Dnom), relative needle positions (Zax/Ztg), *K* estimates and sapwood depth.
+By defining the error (%) of these parameters, the sap flow metrics are recalculated.
+Uncertainty is displayed as absolute and relative values.
+
+# Cummulative
+
+This section allows to estimate the uncertainty of the sap flow and tree water use caused by the following cumulated inputs: thermal diffusivity (Dnom), relative needle positions (Zax/Ztg), *K* estimates and sapwood depth.
+By defining the error (%) of these parameters, sap flow and tree water use are recalculated.
+Uncertainty is displayed as absolute and relative values.
+

@@ -1,0 +1,50 @@
+---
+title: "Troubleshooting"
+---
+
+We try to provide constructive warnings or error messages.
+However, we cannot catch all problems.
+Below is a list of possible bugs, their cause, and a possible solution. In addition, the output of the R console often provides a clue as to what went wrong.
+
+Please note that the application has been developed and tested on a Windows system, and partially tested on Mac OSX. 
+
+You can report issues or get in contact with us by opening an [Issue on GitHub](https://github.com/mcwimm/SFA/issues/new).
+
+### General
+
+&#10060; Warning in R console: Error in (...) could not find function(...)
+
+&#10004; It is likely that not all packages were loaded. Please run the setup file ('set-up.R' located in the root directory) separately and make sure all required packages are installed.
+
+
+### Launch the SFA
+
+&#10060; The SFA does not open when started via the ‘Run App’ or ‘RungGitHub’-command, or the following error message is shown: *'An error has occurred! could not find function (...)'*.
+
+&#10004; Try to run the script ‘setup.R’ separately to install and load all required packages
+
+&#10004; On Mac: 1) run the command `library(shiny)` (see [Launch the SFA](#Launch-the-SFA)), 2) grant access permissions to RStudio (open system preferences > Security and privacy > privacy and select "full disk access" from the left pane and click or add R Studio on the right pane). If this does not solve the problem and you are running the app through the wrapper function, then 3) you will need to also grant access to your navigation browser (i.e., Safari) as described for step 2)
+
+### Data upload
+
+&#10060; Preview table shows error message instead of uploaded table
+
+&#10004; Carefully check the upload settings. May open the csv file externally in a text editor and see which separator is used and how many lines need to be skipped. In some cases, the raw data file contains header sections between recordings, which can cause trouble. Delete them manually.
+
+### K estimation
+
+&#10060; Figures do not show zero-flow axis (x=0) by default
+
+&#10004; This seems to only occur with Mac. To change the scale of the x-axis in the diagram enable 'fixed' scales in Box `Control plots`
+
+### Sap Flow Metrics
+
+&#10060; The SFS or SFD figures presents less thermometer positions than present in the data set
+
+&#10004; K values were not set for all positions. Go back to K-value > Estimation and check table ‘Selected’ in the box `K-value estimation`.
+
+### Sap Flow Metrics
+
+&#10060; Negative formula option show less SFS and SFD data than present in the data set although all K values have been set.
+
+&#10004; More than one manual thresholds is provided but the total number of thresholds is smaller than the number of thermometers.

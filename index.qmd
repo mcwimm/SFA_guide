@@ -1,7 +1,10 @@
 ---
-title: "SFA User Guide"
+title: "The SapFlowAnalyzer User Guide"
+subtitle: "Analyzing Heat Field Deformation Sap Flow Data"
+author: Marie-Christin Wimmler
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+The **Sap Flow Analyzer** (SFA) is a R Shiny app to process sap flow data recorded with the Heat Field Deformation (HFD) method. HFD is a thermodynamic method to measure sap flow using a continuous heating system ([Nadezhdina et al., 2006](https://doi.org/10.1093/treephys/26.10.1277); [Nadezhdina, 2018](https://doi.org/10.3832/ifor2381-011)). With a needle-like heater a heat field is created across the stem and the heat distribution is measured with three needle-like sensors. A needle sensor can have multiple, evenly distributed, thermometers which record radial flow profile. Based on the ratio of temperature gradients around the heater in axial (dTSym) and tangential (dTas) directions, sap flow metrics (sap flow per section, sap flow density), sap flow rate and tree water use can be estimated. The method requires to determine a calibration value (*K*) for each tree and thermometer. With the SFA, data can be cleaned or filtered, *K* can be determined and sap flow per section can be scaled to sap flow and total tree water use.
+

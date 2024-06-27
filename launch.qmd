@@ -2,6 +2,34 @@
 title: "Getting started"
 ---
 
-SFA can be initialized in two different ways: Comment Suggest edit Edit from here
+The SFA can be initialized in two different ways:
 
-by manually creating a local copy of the github repository, by launching the app via an R wrapper function. Both methods require the free software R and the R-package ‘shiny’ (version 1.5 or higher, Chang et al., 2020). To install and load the package, run the following two lines of code in an R script:
+1)  by manually creating a local copy of the github repository,
+2)  by launching the application via an R wrapper function.
+
+Both methods require the free software [R](https://cran.r-project.org/) and the R-package ‘shiny’ (version 1.5 or higher, [Chang et al., 2020](https://cran.r-project.org/package=shiny)). To install and load the package, run the following two lines of code in R:
+
+``` r
+install.packages("shiny")
+library("shiny")
+```
+
+The use of the IDE [Rstudio](https://www.rstudio.com/) is optional.
+
+## Local copy
+
+Clone or download the github repository https://github.com/mcwimm/SFA and navigate to the directory where the repository is located The main shiny app files, *server.R* and *ui.R*, can be used to launch SFA using the ‘Run App’ button in RStudio. This method allows the user to modify the code and collaborate with the developers.
+
+## Online verion
+
+Use the 'runGitHub' command, specifying the repository name and owner, and the destination directory:
+
+``` r
+runGitHub(repo = "SFA", username = "mcwimm", destdir = NULL)
+```
+
+This method has the advantage that the user always has access to the latest version. However, files are stored in a temporary folder if not previously defined by the user, and may be lost.
+
+If the application is started successfully, it will open in a browser window, leading the user to the SFA landing page, which provides some basic information about the application, the Heat Field Deformation (HFD) method, a short guide on how to use the application, and output options. The dash or plus sign in the upper right corner of each box allows you to collapse the box.
+
+![](assets/images/about.png)

@@ -5,17 +5,73 @@ title: "Data"
 The ‘data’ menu item is divided in three subsections: upload, filter and view.
 
 # Upload
-## Box Upload file
+## Box: Upload file
 
-To upload a csv file browse to the directory where the file is stored (**<1>**).
-Select the input file type (**<2>**), the separator and the number of lines to skip (**<3>**).
-If the upload is successful, the box `Preview data` shows a table with data.
-To confirm the usage of the file click ‘Use data’ (**<4>**).
-Afterwards, the file name is shown in the upper right corner of the SFA.
-If the data is not shown correctly, open the csv-file externally and check the required column names (Table 1) and the csv-settings (i.e., comma delimited, tab delimited, etc.).
+To upload a .csv file, browse to the directory where the file is stored.
+Select the input file type and specify a string to be found in the header.
+If the upload is successful, the Preview Data box will display a table of data.
+To confirm the use of the file, click the 'Use data' button.
+The file name will then be displayed in the top right corner of the SFA.
+If the data is not displayed correctly, open the csv file externally and check the required column names (@tbl-headers).
 
-![](assets/images/data_upload.png){width=400 fig-align="left"}
+
+The SFA provides the ability to upload csv files of various types. 
+A detailed description can be found in @tbl-headers, including the required column names. 
+In all cases, the file must contain time records, either in two columns named 'date' and 'time', or in a single column named 'datetime'.  
+Column names are not case-sensitive.
+
+Processed data files are previous outputs of the SFA and allow an analysis to be continued or figures to be generated and updated. 
+In 'read' mode, the existing data cannot be modified. For example, if the data file contains SFD calculated with the negative formula, it cannot be changed to the positive formula. 
+However, this mode does allow the numbers to be modified. 
+The 'write' mode, on the other hand, allows to modify previously calculated results, e.g. by adjusting the wood properties.
+
+
+| **Type**                                 | **Description**                                                                                                                                                              | **Required columns**                                                                                                                                                                                   |
+|:---------------------------------------- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Raw**                                  | Raw HFD temperature recordings, this includes temperatures recorded with the upper, side and lower sensor, respectively, at different depths.                                | Column names must contain the number of thermometer position _i_ and the letters U, S or L to indicate the sensor, e.g. “Temp 2 S”, “temp_1_U”.                                                          |
+| **Delta**                                | Recordings of symmetrical and asymmetrical temperatures differences at different depths.                                                                                     | Columns names must contain temperature differences, dtsym and dtas at different depths _i_, e.g. “dTSym_1”, “dTas 3”.                                                                                    |
+| **Processed read** / **Processed write** | Processed recordings of SFS, SFD, etc., preferably produced with the SFA, in long-format. That is, one column contains the results, e.g. SFD, for all thermometer positions. | Column names are fixed and case sensitive. File contains at least: dTas, dTSym, dTsa, dTsym.dTas. Further optional column names are: k, SFS, SFDsw, depth, Aring, R, Cring, SFdepth, sfM1, sfM2, sfM3. |
+
+: Data types available in the SFA. Column names are not case sensitive. {#tbl-headers}
+
+## Box: Restore settings
+
+If the settings from a previous project were saved, they can be restored by uploading the .rds settings file here.
+Note that all settings except the working directory will be restored.
+
+## Box: Preview data
+
+Data are shown in wide and long format. 
+The latter can be downloaded as csv or excel files and later used to continue the analysis using the input file types ‘Processed read’ or ‘Processed write’ from the 'input file type' drop-down menu located on the "Upload file" tab.
 
 # Filter
+## Box: Filter options
+
+SFA provides several options for cleaning data before processing. These include
+- Selecting dates and times, e.g. removing the date the sensor was installed or removed.
+- Selecting minimum and maximum limits for each temperature difference variable
+- Remove outliers, separately for each temperature difference variable
+- Remove rows with NA values (not available or missing values)
+- Select individual sensor positions (e.g., only thermometers that were in sapwood)
+
+To load or refresh filter options, click the Load Filter Options button.
+If a new dataset has been uploaded without updating the application, this button must also be clicked to update the filter options.
+
+Clicking on 'Apply filter' will apply all the defined changes to the record.
+Delete Filter' resets the dataset to its original Extend version.
+
+
+## Box: Figures
+
+In this box, the filtered data are visualized, either as a Violin Plot, Box Plot, Histogram or using Frequency Polygons.
+The 'Variable' and 'Color/Group' drop-down menus determine the appearance of the plot.
+
+Filtered data can be saved as a csv or excel file (long format) or as a graph.
+
 
 # View
+
+This menu item allows you to create custom plots.
+In the 'Settings' box, the variables used to create the graph, such as axis and color variables, are defined.
+A click on the 'Render Figure' button produces the graph shown in the 'Figure' box.
+Each figure can be saved using the 'Save Figure' button.
