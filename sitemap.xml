@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mcwimm.github.io/SFA_guide/visualization.html</loc>
-    <lastmod>2024-06-26T17:12:59.871Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mcwimm.github.io/SFA_guide/trouble.html</loc>
-    <lastmod>2024-06-27T09:05:12.319Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mcwimm.github.io/SFA_guide/sapflow.html</loc>
-    <lastmod>2024-06-26T17:13:05.887Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mcwimm.github.io/SFA_guide/launch.html</loc>
-    <lastmod>2024-06-26T16:16:35.632Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mcwimm.github.io/SFA_guide/index.html</loc>
-    <lastmod>2024-06-27T09:46:00.062Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mcwimm.github.io/SFA_guide/data.html</loc>
-    <lastmod>2024-06-26T17:30:18.477Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mcwimm.github.io/SFA_guide/kvalue.html</loc>
-    <lastmod>2024-06-27T09:51:00.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mcwimm.github.io/SFA_guide/recommendations.html</loc>
-    <lastmod>2024-06-27T09:45:06.282Z</lastmod>
+    <loc>https://mcwimm.github.io/SFA_guide/uncertainty.html</loc>
+    <lastmod>2024-06-26T17:23:45.279Z</lastmod>
   </url>
   <url>
     <loc>https://mcwimm.github.io/SFA_guide/settings.html</loc>
     <lastmod>2024-06-26T16:57:37.230Z</lastmod>
   </url>
   <url>
-    <loc>https://mcwimm.github.io/SFA_guide/uncertainty.html</loc>
-    <lastmod>2024-06-26T17:23:45.279Z</lastmod>
+    <loc>https://mcwimm.github.io/SFA_guide/recommendations.html</loc>
+    <lastmod>2024-06-27T09:45:06.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mcwimm.github.io/SFA_guide/kvalue.html</loc>
+    <lastmod>2024-06-27T09:51:00.653Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mcwimm.github.io/SFA_guide/general.html</loc>
+    <lastmod>2024-06-27T10:07:48.389Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mcwimm.github.io/SFA_guide/data.html</loc>
+    <lastmod>2024-06-26T17:30:18.477Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mcwimm.github.io/SFA_guide/index.html</loc>
+    <lastmod>2024-06-27T09:46:00.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mcwimm.github.io/SFA_guide/launch.html</loc>
+    <lastmod>2024-06-26T16:16:35.632Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mcwimm.github.io/SFA_guide/sapflow.html</loc>
+    <lastmod>2024-06-26T17:13:05.887Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mcwimm.github.io/SFA_guide/trouble.html</loc>
+    <lastmod>2024-06-27T09:05:12.319Z</lastmod>
   </url>
 </urlset>
