@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -134,37 +168,50 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./settings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Settings</span></a>
+  <a href="./kvalue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>K</em> parameter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kvalue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">K parameter</span></a>
+  <a href="./sapflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sap Flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">sapflow.qmd</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">uncertainty.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uncertainty</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
- <span class="menu-text">trouble.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./trouble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
- <span class="menu-text">recommendations.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./recommendations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommendations</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#local-copy" id="toc-local-copy" class="nav-link active" data-scroll-target="#local-copy">Local copy</a></li>
+  <li><a href="#online-verion" id="toc-online-verion" class="nav-link" data-scroll-target="#online-verion">Online verion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -188,10 +235,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>SFA can be initialized in two different ways: Comment Suggest edit Edit from here</p>
-<p>by manually creating a local copy of the github repository, by launching the app via an R wrapper function. Both methods require the free software R and the R-package ‘shiny’ (version 1.5 or higher, Chang et al., 2020). To install and load the package, run the following two lines of code in an R script:</p>
+<p>The SFA can be initialized in two different ways:</p>
+<ol type="1">
+<li>by manually creating a local copy of the github repository,</li>
+<li>by launching the application via an R wrapper function.</li>
+</ol>
+<p>Both methods require the free software <a href="https://cran.r-project.org/">R</a> and the R-package ‘shiny’ (version 1.5 or higher, <a href="https://cran.r-project.org/package=shiny">Chang et al., 2020</a>). To install and load the package, run the following two lines of code in R:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"shiny"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"shiny"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The use of the IDE <a href="https://www.rstudio.com/">Rstudio</a> is optional.</p>
+<section id="local-copy" class="level2">
+<h2 class="anchored" data-anchor-id="local-copy">Local copy</h2>
+<p>Clone or download the github repository https://github.com/mcwimm/SFA and navigate to the directory where the repository is located The main shiny app files, <em>server.R</em> and <em>ui.R</em>, can be used to launch SFA using the ‘Run App’ button in RStudio. This method allows the user to modify the code and collaborate with the developers.</p>
+</section>
+<section id="online-verion" class="level2">
+<h2 class="anchored" data-anchor-id="online-verion">Online verion</h2>
+<p>Use the ‘runGitHub’ command, specifying the repository name and owner, and the destination directory:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runGitHub</span>(<span class="at">repo =</span> <span class="st">"SFA"</span>, <span class="at">username =</span> <span class="st">"mcwimm"</span>, <span class="at">destdir =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This method has the advantage that the user always has access to the latest version. However, files are stored in a temporary folder if not previously defined by the user, and may be lost.</p>
+<p>If the application is started successfully, it will open in a browser window, leading the user to the SFA landing page, which provides some basic information about the application, the Heat Field Deformation (HFD) method, a short guide on how to use the application, and output options. The dash or plus sign in the upper right corner of each box allows you to collapse the box.</p>
+<p><img src="assets/images/about.png" class="img-fluid"></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

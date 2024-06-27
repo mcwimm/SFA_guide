@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settings.html">App navigation</a></li><li class="breadcrumb-item"><a href="./kvalue.html">K parameter</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settings.html">App navigation</a></li><li class="breadcrumb-item"><a href="./kvalue.html"><em>K</em> parameter</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -134,44 +134,61 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./settings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Settings</span></a>
+  <a href="./kvalue.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><em>K</em> parameter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kvalue.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">K parameter</span></a>
+  <a href="./sapflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sap Flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">sapflow.qmd</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">uncertainty.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uncertainty</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
- <span class="menu-text">trouble.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./trouble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
- <span class="menu-text">recommendations.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./recommendations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommendations</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">Estimation</a>
+  <ul class="collapse">
+  <li><a href="#box-k-estimation-settings" id="toc-box-k-estimation-settings" class="nav-link" data-scroll-target="#box-k-estimation-settings">Box: <em>K</em> estimation settings</a></li>
+  <li><a href="#box-control-plots" id="toc-box-control-plots" class="nav-link" data-scroll-target="#box-control-plots">Box: Control plots</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settings.html">App navigation</a></li><li class="breadcrumb-item"><a href="./kvalue.html">K parameter</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settings.html">App navigation</a></li><li class="breadcrumb-item"><a href="./kvalue.html"><em>K</em> parameter</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">K parameter</h1>
+<h1 class="title"><em>K</em> parameter</h1>
 </div>
 
 
@@ -188,9 +205,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The ‘data’ menu item is divided in three subsections: upload, filter and view.</p>
+<section id="description" class="level1">
+<h1>Description</h1>
+<p>Here, a brief description of the estimation of K and the type of K plots is given. A detailed discussion on the meaning of K in SAP flow estimation can be found in [Nadezhdina, 2018] (https://doi.org/10.3832/ifor2381-011).</p>
+</section>
+<section id="estimation" class="level1">
+<h1>Estimation</h1>
+<section id="box-k-estimation-settings" class="level2">
+<h2 class="anchored" data-anchor-id="box-k-estimation-settings">Box: <em>K</em> estimation settings</h2>
+<p><em>K</em> must be estimated for each thermometer position. By clicking a radio button (<strong>&lt;1&gt;</strong>), <em>K</em> is estimated using the selected method (<strong>&lt;2&gt;</strong>) and optional filter options (<strong>&lt;3&gt;</strong>). If <em>K</em> is estimated correctly, it can be set using the ‘Set <em>K</em>’ button (<strong>&lt;4&gt;</strong>).</p>
+<p><img src="assets/images/K_estimation_1.png" class="img-fluid" width="500"></p>
+<p>All set <em>K</em> values appear in the ‘Selected’ table (<strong>&lt;1&gt;</strong>). The other tables (<strong>&lt;2&gt;</strong>) provide estimates for all thermometer positions at once, obtained with each method. All regression options (figure above <strong>&lt;3&gt;</strong>) apply to this table as well. If the values in these tables are sufficient, they can all be set at once by clicking “Use <em>K</em> estimates” below the table. If <em>K</em> values are provided in a csv file, the file can be uploaded in the ‘Read csv’ tab (<strong>&lt;2&gt;</strong>). Selected <em>K</em>s can also be exported as a data file (<strong>&lt;3&gt;</strong>).</p>
+<p><img src="assets/images/K_estimation_2.png" class="img-fluid" width="500"></p>
+<p>For more information and recommendations on how to estimate <em>K</em>, see the Recommendations section.</p>
+</section>
+<section id="box-control-plots" class="level2">
+<h2 class="anchored" data-anchor-id="box-control-plots">Box: Control plots</h2>
+<p>This box shows the typical <em>K</em> diagram (<strong>&lt;1&gt;</strong>) as well as two control diagrams (<strong>&lt;2&gt;</strong>) to assess the quality of the estimate.</p>
+<p>It is possible to zoom in by defining the range of the x-axis variable by setting ‘Scales’ (<strong>&lt;3&gt;</strong>) to <em>fixed</em> and defining minimum and maximum values. If the ‘regression’ method is selected to estimate <em>K</em>, the regression line can be forced to cross the y-axis by enabling ‘Fullrange regression’ in the <em>K</em>-diagram</p>
+<p>The ‘Save figures’ button (<strong>&lt;5&gt;</strong>) downloads the <em>K</em>-diagram as well as the two control diagrams for the selected thermometer position.</p>
+<p><img src="assets/images/K_estimation_4.png" class="img-fluid" width="500"></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

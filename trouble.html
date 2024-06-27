@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marie-Christin Wimmler">
 
-<title>The SapFlowAnalyzer User Guide – SFA User Guide</title>
+<title>Troubleshooting – SFA User Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,9 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      SFA User Guide
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./trouble.html">Troubleshooting</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -157,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./trouble.html" class="sidebar-item-text sidebar-link">
+  <a href="./trouble.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
@@ -172,28 +169,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a></li>
+  <li><a href="#launch-the-sfa" id="toc-launch-the-sfa" class="nav-link" data-scroll-target="#launch-the-sfa">Launch the SFA</a></li>
+  <li><a href="#data-upload" id="toc-data-upload" class="nav-link" data-scroll-target="#data-upload">Data upload</a></li>
+  <li><a href="#k-estimation" id="toc-k-estimation" class="nav-link" data-scroll-target="#k-estimation">K estimation</a></li>
+  <li><a href="#sap-flow-metrics" id="toc-sap-flow-metrics" class="nav-link" data-scroll-target="#sap-flow-metrics">Sap Flow Metrics</a></li>
+  <li><a href="#sap-flow-metrics-1" id="toc-sap-flow-metrics-1" class="nav-link" data-scroll-target="#sap-flow-metrics-1">Sap Flow Metrics</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The SapFlowAnalyzer User Guide</h1>
-<p class="subtitle lead">Analyzing Heat Field Deformation Sap Flow Data</p>
+<h1 class="title">Troubleshooting</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Marie-Christin Wimmler </p>
-          </div>
-  </div>
     
   
     
@@ -204,9 +205,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The <strong>Sap Flow Analyzer</strong> (SFA) is a R Shiny app to process sap flow data recorded with the Heat Field Deformation (HFD) method. HFD is a thermodynamic method to measure sap flow using a continuous heating system (<a href="https://doi.org/10.1093/treephys/26.10.1277">Nadezhdina et al., 2006</a>; <a href="https://doi.org/10.3832/ifor2381-011">Nadezhdina, 2018</a>). With a needle-like heater a heat field is created across the stem and the heat distribution is measured with three needle-like sensors. A needle sensor can have multiple, evenly distributed, thermometers which record radial flow profile. Based on the ratio of temperature gradients around the heater in axial (dTSym) and tangential (dTas) directions, sap flow metrics (sap flow per section, sap flow density), sap flow rate and tree water use can be estimated. The method requires to determine a calibration value (<em>K</em>) for each tree and thermometer. With the SFA, data can be cleaned or filtered, <em>K</em> can be determined and sap flow per section can be scaled to sap flow and total tree water use.</p>
+<p>We try to provide constructive warnings or error messages. However, we cannot catch all problems. Below is a list of possible bugs, their cause, and a possible solution. In addition, the output of the R console often provides a clue as to what went wrong.</p>
+<p>Please note that the application has been developed and tested on a Windows system, and partially tested on Mac OSX.</p>
+<p>You can report issues or get in contact with us by opening an <a href="https://github.com/mcwimm/SFA/issues/new">Issue on GitHub</a>.</p>
+<section id="general" class="level3">
+<h3 class="anchored" data-anchor-id="general">General</h3>
+<p>❌ Warning in R console: Error in (…) could not find function(…)</p>
+<p>✔ It is likely that not all packages were loaded. Please run the setup file (‘set-up.R’ located in the root directory) separately and make sure all required packages are installed.</p>
+</section>
+<section id="launch-the-sfa" class="level3">
+<h3 class="anchored" data-anchor-id="launch-the-sfa">Launch the SFA</h3>
+<p>❌ The SFA does not open when started via the ‘Run App’ or ‘RungGitHub’-command, or the following error message is shown: <em>‘An error has occurred! could not find function (…)’</em>.</p>
+<p>✔ Try to run the script ‘setup.R’ separately to install and load all required packages</p>
+<p>✔ On Mac: 1) run the command <code>library(shiny)</code> (see <a href="#Launch-the-SFA">Launch the SFA</a>), 2) grant access permissions to RStudio (open system preferences &gt; Security and privacy &gt; privacy and select “full disk access” from the left pane and click or add R Studio on the right pane). If this does not solve the problem and you are running the app through the wrapper function, then 3) you will need to also grant access to your navigation browser (i.e., Safari) as described for step 2)</p>
+</section>
+<section id="data-upload" class="level3">
+<h3 class="anchored" data-anchor-id="data-upload">Data upload</h3>
+<p>❌ Preview table shows error message instead of uploaded table</p>
+<p>✔ Carefully check the upload settings. May open the csv file externally in a text editor and see which separator is used and how many lines need to be skipped. In some cases, the raw data file contains header sections between recordings, which can cause trouble. Delete them manually.</p>
+</section>
+<section id="k-estimation" class="level3">
+<h3 class="anchored" data-anchor-id="k-estimation">K estimation</h3>
+<p>❌ Figures do not show zero-flow axis (x=0) by default</p>
+<p>✔ This seems to only occur with Mac. To change the scale of the x-axis in the diagram enable ‘fixed’ scales in Box <code>Control plots</code></p>
+</section>
+<section id="sap-flow-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="sap-flow-metrics">Sap Flow Metrics</h3>
+<p>❌ The SFS or SFD figures presents less thermometer positions than present in the data set</p>
+<p>✔ K values were not set for all positions. Go back to K-value &gt; Estimation and check table ‘Selected’ in the box <code>K-value estimation</code>.</p>
+</section>
+<section id="sap-flow-metrics-1" class="level3">
+<h3 class="anchored" data-anchor-id="sap-flow-metrics-1">Sap Flow Metrics</h3>
+<p>❌ Negative formula option show less SFS and SFD data than present in the data set although all K values have been set.</p>
+<p>✔ More than one manual thresholds is provided but the total number of thresholds is smaller than the number of thermometers.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -134,30 +134,36 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./settings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Settings</span></a>
+  <a href="./kvalue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>K</em> parameter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kvalue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">K parameter</span></a>
+  <a href="./sapflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sap Flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">sapflow.qmd</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">uncertainty.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uncertainty</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
- <span class="menu-text">trouble.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./trouble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
- <span class="menu-text">recommendations.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./recommendations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommendations</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -170,9 +176,15 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#upload" id="toc-upload" class="nav-link active" data-scroll-target="#upload">Upload</a>
   <ul class="collapse">
-  <li><a href="#box-upload-file" id="toc-box-upload-file" class="nav-link" data-scroll-target="#box-upload-file">Box Upload file</a></li>
+  <li><a href="#box-upload-file" id="toc-box-upload-file" class="nav-link" data-scroll-target="#box-upload-file">Box: Upload file</a></li>
+  <li><a href="#box-restore-settings" id="toc-box-restore-settings" class="nav-link" data-scroll-target="#box-restore-settings">Box: Restore settings</a></li>
+  <li><a href="#box-preview-data" id="toc-box-preview-data" class="nav-link" data-scroll-target="#box-preview-data">Box: Preview data</a></li>
   </ul></li>
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter">Filter</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter">Filter</a>
+  <ul class="collapse">
+  <li><a href="#box-filter-options" id="toc-box-filter-options" class="nav-link" data-scroll-target="#box-filter-options">Box: Filter options</a></li>
+  <li><a href="#box-figures" id="toc-box-figures" class="nav-link" data-scroll-target="#box-figures">Box: Figures</a></li>
+  </ul></li>
   <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view">View</a></li>
   </ul>
 </nav>
@@ -203,20 +215,78 @@ ul.task-list li input[type="checkbox"] {
 <section id="upload" class="level1">
 <h1>Upload</h1>
 <section id="box-upload-file" class="level2">
-<h2 class="anchored" data-anchor-id="box-upload-file">Box Upload file</h2>
-<p>To upload a csv file browse to the directory where the file is stored (<strong>&lt;1&gt;</strong>). Select the input file type (<strong>&lt;2&gt;</strong>), the separator and the number of lines to skip (<strong>&lt;3&gt;</strong>). If the upload is successful, the box <code>Preview data</code> shows a table with data. To confirm the usage of the file click ‘Use data’ (<strong>&lt;4&gt;</strong>). Afterwards, the file name is shown in the upper right corner of the SFA. If the data is not shown correctly, open the csv-file externally and check the required column names (Table 1) and the csv-settings (i.e., comma delimited, tab delimited, etc.).</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="assets/images/data_upload.png" class="img-fluid quarto-figure quarto-figure-left figure-img" width="400"></p>
+<h2 class="anchored" data-anchor-id="box-upload-file">Box: Upload file</h2>
+<p>To upload a .csv file, browse to the directory where the file is stored. Select the input file type and specify a string to be found in the header. If the upload is successful, the Preview Data box will display a table of data. To confirm the use of the file, click the ‘Use data’ button. The file name will then be displayed in the top right corner of the SFA. If the data is not displayed correctly, open the csv file externally and check the required column names (<a href="#tbl-headers" class="quarto-xref">Table&nbsp;1</a>).</p>
+<p>The SFA provides the ability to upload csv files of various types. A detailed description can be found in <a href="#tbl-headers" class="quarto-xref">Table&nbsp;1</a>, including the required column names. In all cases, the file must contain time records, either in two columns named ‘date’ and ‘time’, or in a single column named ‘datetime’.<br>
+Column names are not case-sensitive.</p>
+<p>Processed data files are previous outputs of the SFA and allow an analysis to be continued or figures to be generated and updated. In ‘read’ mode, the existing data cannot be modified. For example, if the data file contains SFD calculated with the negative formula, it cannot be changed to the positive formula. However, this mode does allow the numbers to be modified. The ‘write’ mode, on the other hand, allows to modify previously calculated results, e.g.&nbsp;by adjusting the wood properties.</p>
+<div id="tbl-headers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-headers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Data types available in the SFA. Column names are not case sensitive.
+</figcaption>
+<div aria-describedby="tbl-headers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 41%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Type</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Required columns</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Raw</strong></td>
+<td style="text-align: left;">Raw HFD temperature recordings, this includes temperatures recorded with the upper, side and lower sensor, respectively, at different depths.</td>
+<td style="text-align: left;">Column names must contain the number of thermometer position <em>i</em> and the letters U, S or L to indicate the sensor, e.g.&nbsp;“Temp 2 S”, “temp_1_U”.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Delta</strong></td>
+<td style="text-align: left;">Recordings of symmetrical and asymmetrical temperatures differences at different depths.</td>
+<td style="text-align: left;">Columns names must contain temperature differences, dtsym and dtas at different depths <em>i</em>, e.g.&nbsp;“dTSym_1”, “dTas 3”.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Processed read</strong> / <strong>Processed write</strong></td>
+<td style="text-align: left;">Processed recordings of SFS, SFD, etc., preferably produced with the SFA, in long-format. That is, one column contains the results, e.g.&nbsp;SFD, for all thermometer positions.</td>
+<td style="text-align: left;">Column names are fixed and case sensitive. File contains at least: dTas, dTSym, dTsa, dTsym.dTas. Further optional column names are: k, SFS, SFDsw, depth, Aring, R, Cring, SFdepth, sfM1, sfM2, sfM3.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </figure>
 </div>
+</section>
+<section id="box-restore-settings" class="level2">
+<h2 class="anchored" data-anchor-id="box-restore-settings">Box: Restore settings</h2>
+<p>If the settings from a previous project were saved, they can be restored by uploading the .rds settings file here. Note that all settings except the working directory will be restored.</p>
+</section>
+<section id="box-preview-data" class="level2">
+<h2 class="anchored" data-anchor-id="box-preview-data">Box: Preview data</h2>
+<p>Data are shown in wide and long format. The latter can be downloaded as csv or excel files and later used to continue the analysis using the input file types ‘Processed read’ or ‘Processed write’ from the ‘input file type’ drop-down menu located on the “Upload file” tab.</p>
 </section>
 </section>
 <section id="filter" class="level1">
 <h1>Filter</h1>
+<section id="box-filter-options" class="level2">
+<h2 class="anchored" data-anchor-id="box-filter-options">Box: Filter options</h2>
+<p>SFA provides several options for cleaning data before processing. These include - Selecting dates and times, e.g.&nbsp;removing the date the sensor was installed or removed. - Selecting minimum and maximum limits for each temperature difference variable - Remove outliers, separately for each temperature difference variable - Remove rows with NA values (not available or missing values) - Select individual sensor positions (e.g., only thermometers that were in sapwood)</p>
+<p>To load or refresh filter options, click the Load Filter Options button. If a new dataset has been uploaded without updating the application, this button must also be clicked to update the filter options.</p>
+<p>Clicking on ‘Apply filter’ will apply all the defined changes to the record. Delete Filter’ resets the dataset to its original Extend version.</p>
+</section>
+<section id="box-figures" class="level2">
+<h2 class="anchored" data-anchor-id="box-figures">Box: Figures</h2>
+<p>In this box, the filtered data are visualized, either as a Violin Plot, Box Plot, Histogram or using Frequency Polygons. The ‘Variable’ and ‘Color/Group’ drop-down menus determine the appearance of the plot.</p>
+<p>Filtered data can be saved as a csv or excel file (long format) or as a graph.</p>
+</section>
 </section>
 <section id="view" class="level1">
 <h1>View</h1>
+<p>This menu item allows you to create custom plots. In the ‘Settings’ box, the variables used to create the graph, such as axis and color variables, are defined. A click on the ‘Render Figure’ button produces the graph shown in the ‘Figure’ box. Each figure can be saved using the ‘Save Figure’ button.</p>
 
 
 </section>

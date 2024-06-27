@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marie-Christin Wimmler">
 
-<title>The SapFlowAnalyzer User Guide – SFA User Guide</title>
+<title>Recommendations – SFA User Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,9 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      SFA User Guide
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./recommendations.html">Recommendations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./recommendations.html" class="sidebar-item-text sidebar-link">
+  <a href="./recommendations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Recommendations</span></a>
   </div>
 </li>
@@ -172,28 +169,44 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setting-wood-and-sensor-properties" id="toc-setting-wood-and-sensor-properties" class="nav-link active" data-scroll-target="#setting-wood-and-sensor-properties">Setting wood and sensor properties</a>
+  <ul class="collapse">
+  <li><a href="#example-1-all-thermometers-are-in-the-stem" id="toc-example-1-all-thermometers-are-in-the-stem" class="nav-link" data-scroll-target="#example-1-all-thermometers-are-in-the-stem">Example 1: all thermometers are in the stem</a></li>
+  <li><a href="#example-2-some-thermometers-are-outside-the-stem" id="toc-example-2-some-thermometers-are-outside-the-stem" class="nav-link" data-scroll-target="#example-2-some-thermometers-are-outside-the-stem">Example 2: some thermometers are outside the stem</a></li>
+  </ul></li>
+  <li><a href="#estimating-k" id="toc-estimating-k" class="nav-link" data-scroll-target="#estimating-k">Estimating <em>K</em></a>
+  <ul class="collapse">
+  <li><a href="#case-1-no-flow-records-exist" id="toc-case-1-no-flow-records-exist" class="nav-link" data-scroll-target="#case-1-no-flow-records-exist">Case 1: No-flow records exist</a>
+  <ul class="collapse">
+  <li><a href="#a-typical-k-diagram-pattern" id="toc-a-typical-k-diagram-pattern" class="nav-link" data-scroll-target="#a-typical-k-diagram-pattern">A) Typical K diagram pattern</a></li>
+  <li><a href="#b-atypical-k-diagram-pattern" id="toc-b-atypical-k-diagram-pattern" class="nav-link" data-scroll-target="#b-atypical-k-diagram-pattern">B) Atypical K diagram pattern</a></li>
+  </ul></li>
+  <li><a href="#case-2-absence-of-no-flow-records" id="toc-case-2-absence-of-no-flow-records" class="nav-link" data-scroll-target="#case-2-absence-of-no-flow-records">Case 2: Absence of no-flow records</a>
+  <ul class="collapse">
+  <li><a href="#experiments" id="toc-experiments" class="nav-link" data-scroll-target="#experiments">Experiments</a></li>
+  </ul></li>
+  <li><a href="#case-3-instability-of-k" id="toc-case-3-instability-of-k" class="nav-link" data-scroll-target="#case-3-instability-of-k">Case 3: instability of K</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The SapFlowAnalyzer User Guide</h1>
-<p class="subtitle lead">Analyzing Heat Field Deformation Sap Flow Data</p>
+<h1 class="title">Recommendations</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Marie-Christin Wimmler </p>
-          </div>
-  </div>
     
   
     
@@ -204,9 +217,140 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The <strong>Sap Flow Analyzer</strong> (SFA) is a R Shiny app to process sap flow data recorded with the Heat Field Deformation (HFD) method. HFD is a thermodynamic method to measure sap flow using a continuous heating system (<a href="https://doi.org/10.1093/treephys/26.10.1277">Nadezhdina et al., 2006</a>; <a href="https://doi.org/10.3832/ifor2381-011">Nadezhdina, 2018</a>). With a needle-like heater a heat field is created across the stem and the heat distribution is measured with three needle-like sensors. A needle sensor can have multiple, evenly distributed, thermometers which record radial flow profile. Based on the ratio of temperature gradients around the heater in axial (dTSym) and tangential (dTas) directions, sap flow metrics (sap flow per section, sap flow density), sap flow rate and tree water use can be estimated. The method requires to determine a calibration value (<em>K</em>) for each tree and thermometer. With the SFA, data can be cleaned or filtered, <em>K</em> can be determined and sap flow per section can be scaled to sap flow and total tree water use.</p>
+<section id="setting-wood-and-sensor-properties" class="level1">
+<h1>Setting wood and sensor properties</h1>
+<p>Wood and sensor properties can significantly affect the estimation of sap flow metrics and should be handled with care. The first step is to manually calculate the position of the first and last thermometer. After providing the values to the SFA, carefully compare your estimate with the estimates provided in the table in Settings &gt; Measurement Environment. Below are two examples of how this can be done.</p>
+<section id="example-1-all-thermometers-are-in-the-stem" class="level2">
+<h2 class="anchored" data-anchor-id="example-1-all-thermometers-are-in-the-stem">Example 1: all thermometers are in the stem</h2>
+<p>Data set example: mangrove, thermometer position 1 The tree had a diameter of 25.2 cm, the bark was removed, and the sensor was placed with 11 mm distance from the stem. The sensor had 20 mm distance between needle head and the first thermometer and 10 mm distance between each of the 8 thermometers. The first (i.e., outermost) and last (i.e., innermost) thermometers are 11.7 cm and 4.7 cm from the center of the stem, respectively. The figure describes how these measurements are derived.</p>
+<p><img src="assets/images/recommendations_settings_1.png" class="img-fluid" width="600"></p>
+<p>This information requires the following inputs in the SFA:</p>
+<p><img src="assets/images/recommendations_settings_2.png" class="img-fluid" width="500"></p>
+<p>The Sensor Type drop-down menu allows you to enter specific sensor configurations, such as different distances between thermometers. If the inputs are correct, the distances for the outermost and innermost thermometers in the table at the bottom of the Measurement Environment box should match the previously calculated values.</p>
+<p><img src="assets/images/recommendations_settings_3.png" class="img-fluid" width="500"></p>
+</section>
+<section id="example-2-some-thermometers-are-outside-the-stem" class="level2">
+<h2 class="anchored" data-anchor-id="example-2-some-thermometers-are-outside-the-stem">Example 2: some thermometers are outside the stem</h2>
+<p>Assuming the wood and sensor properties from above but a spacer length of 25 mm leads to a specific case, where the first (outermost) thermometer is located outside the stem. The distance between the center of the stem and this thermometer is 13.1 cm, which is larger the stem radius of 12.6 cm. The first thermometer inside the stem has a distance of 12.1 cm to the center and the last (innermost) of 6.1 cm.</p>
+<p><img src="assets/images/recommendations_settings_4.png" class="img-fluid" width="600"></p>
+<p>If all entries are made correctly the table in the SFA looks like this:</p>
+<p><img src="assets/images/recommendations_settings_5.png" class="img-fluid" width="500"></p>
+<p>Because a thermometer is outside the stem, a warning appears below the table. In this case, the thermometer should be removed from the data set. This can be done in Data &gt; Filter &gt; Filter Options by specifying which thermometers should be used for further analysis.</p>
+<p><img src="assets/images/recommendations_settings_6.png" class="img-fluid" width="300"></p>
+<p>Note that this is a rare case. In the case of small stems with radii less than the needle length, the sensors can be fully inserted to obtain even two radial profiles (i.e., from the opposite side of the installation).</p>
+</section>
+</section>
+<section id="estimating-k" class="level1">
+<h1>Estimating <em>K</em></h1>
+<section id="case-1-no-flow-records-exist" class="level2">
+<h2 class="anchored" data-anchor-id="case-1-no-flow-records-exist">Case 1: No-flow records exist</h2>
+<section id="a-typical-k-diagram-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="a-typical-k-diagram-pattern">A) Typical K diagram pattern</h3>
+<ul>
+<li>In this example data set, the K diagram shows a clear pattern as described, for example, in Nadezhdina 2018, including no-flow records. That is, the temperature differences (dTas, dTsa and dTSym) cross the y-axis.</li>
+<li>Here, <em>K</em> estimation method “no-flow median” can be used.</li>
+<li>The left figure below shows the typical pattern observed in K diagrams. The red star in the left figure indicates the <em>K</em> value.</li>
+<li>Control plot 1 (right figure) confirms the fitness of the estimate, as the green (dTSym) and yellow (<em>K</em>+dTsa) data points intersect at the origin.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_1.png" class="img-fluid" width="600"></p>
+</section>
+<section id="b-atypical-k-diagram-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="b-atypical-k-diagram-pattern">B) Atypical K diagram pattern</h3>
+<ul>
+<li>In this example data set, the <em>K</em> diagram does not show a distinct pattern and the intersection of the data points with the y-axis is not clear.</li>
+<li>In this case, many data points exist around the y-axis (for dTsym/dTas close to 0).</li>
+<li>Using the no-flow median method can lead to over- or underestimation of <em>K</em>. This method takes the value closest to the y-axis and, if there are multiple values, calculates the median.</li>
+<li>The figure below shows that the no-flow median method underestimates <em>K</em> for this data set. This is illustrated by the <em>K</em> control plot 1, where the yellow point cloud does not pass through the origin as it should.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_2.png" class="img-fluid" width="600"></p>
+<ul>
+<li>In such cases, it is advised to check the no-flow regression method.</li>
+<li>In the figure below, the no-flow regression is applied with the time filter set to 10 pm to 6 am.</li>
+<li>The control plot 1 confirms that the estimate of <em>K</em> = 1.12 is better than <em>K</em> = 1.05 obtained with no-flow median.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_3.png" class="img-fluid" width="600"></p>
+<ul>
+<li>Estimation of K can be aided by zooming the K plot and control plots. This is done by selecting a fixed scale and entering the range of data to be displayed on the x-axis.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_4.png" class="img-fluid" width="400"></p>
+</section>
+</section>
+<section id="case-2-absence-of-no-flow-records" class="level2">
+<h2 class="anchored" data-anchor-id="case-2-absence-of-no-flow-records">Case 2: Absence of no-flow records</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>It is recommended that conditions leading to no-flow records be artificially created in the field (see <code>Experiments</code> for details). If this is not possible, K must be approximated, but all estimates must be treated with caution. This is only recommended for users with experience in HFD data analysis.</p>
+</div>
+</div>
+</div>
+<ul>
+<li>In this example, the dataset contains no-flow records that occurred during 1 day in a 5-days measuring period (foggy and drizzling day)</li>
+<li>To demonstrate the difficulty of estimating K in the absence of no-flow records, the data set was split into one set that included the wet day and one set that did not and therefore had no no-flow records (“dry conditions”).</li>
+</ul>
+<p><img src="assets/images/recommendations_k_5.png" class="img-fluid" width="500"></p>
+<ul>
+<li>In the case of absent no-flow records, it is recommended to use no-flow regression including filter options to optimize the regression.</li>
+<li>Without any filter adjustments, the regression results in an estimate of <em>K</em>=1.77.</li>
+<li>Without data points near the y-axis, control plots also become difficult to use. However, for regression, it is recommended to use the downward portion of the dTas point cloud. In this case, a steeper regression line for dTas is expected to result in a better estimate of <em>K</em>.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_6.png" class="img-fluid" width="500"></p>
+<ul>
+<li>To optimize the regression, select values with as close to no-flow conditions as possible. The “diurnal flow” diagram helps to identify the time period with the lowest flow. In this example, sap flow is lowest between midnight and 10 am. Applying this to the filter, reduces K to 1.69.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_7.png" class="img-fluid" width="400"></p>
+<ul>
+<li>The selection of data points used for the regression can be further refined by defining a maximum value for the ratio dTsym:dTas</li>
+<li>The left diagram below shows the regression with the time filter, while the right diagram shows the regression when a maximum value for the ratio dTsym:dTas (i.e., 0.35) is defined. Both yield to similar <em>K</em> values, i.e., 1.69 and 1.71, respectively.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_8.png" class="img-fluid" width="400"></p>
+<ul>
+<li>Decreasing the maximum ratio dTsym:dTas would further decrease K in this example. When the threshold is set to 0.25, K is 1.61 but with a low coefficient of determination as only few data points are left for the regression.</li>
+<li>The following figure shows the estimates for <em>K</em> when applying different thresholds for dTsym:dTas.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_9.png" class="img-fluid" width="400"> - Using the complete data set, i.e., including the no-flow records obtained with the irrigation experiment, shows that <em>K</em> is ~1.61. This value could only be reached by setting the maximum ratio dTSym:dTas as low as possible.</p>
+<p><img src="assets/images/recommendations_k_10.png" class="img-fluid" width="400"></p>
+<ul>
+<li>Applying this strategy to all thermometer positions, results in the following estimates of <em>K</em>. For 3 thermometers, <em>K</em> is overestimated in the absence of no-flow records.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_11.png" class="img-fluid" width="400"></p>
+<ul>
+<li>The higher estimate for <em>K</em> result in an overestimation of daily TWU between 7.7 and 8.7 %.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_12.png" class="img-fluid" width="400"></p>
+<ul>
+<li>As the flow rate in the second thermometer position is relatively high, the uncertainty of this <em>K</em> estimate has a high impact.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_13.png" class="img-fluid" width="400"></p>
+<section id="experiments" class="level3">
+<h3 class="anchored" data-anchor-id="experiments">Experiments</h3>
+<p>In the absence of no-flow records and if it is not possible to wait until such conditions occur (e.g., rain, fog or dew), it is advised to trigger no-flow or reverse flow conditions with experiments (Nadezhdina, 2018, p.125). Such experiments are: - artificial fog by crown microsprinkling - localized irrigation at the opposite side of sensor installation - cuttings bellow (for aboveground organs) or above (for roots) the measuring point to create zero driving force. The latter suits for short-term experiments and can be done at their end.</p>
+</section>
+</section>
+<section id="case-3-instability-of-k" class="level2">
+<h2 class="anchored" data-anchor-id="case-3-instability-of-k">Case 3: instability of K</h2>
+<p>See Nadezhdina (2018, page 125f.) for detailed examples - <em>K</em> is usually stable over long periods of time. - However, if it changes, there may be several reasons + External influences: insufficient isolation of sensor and measuring point, power fluctuations, … + Internal influences: tissue drying, … - External influences should be avoided at the outset. However, observing the instability of <em>K</em> can help to identify the occurrence of such conditions. - Internal influences to not depend on the measuring setup. In such cases, several <em>K</em> values must be estimated for the same thermometer position. This is not directly integrated in the SFA, but can be achieved by using the visualization and filter options (‘Data’ menu) in the SFA. - For example, the change of dTas over time can be visualized with the following settings</p>
+<p><img src="assets/images/recommendations_k_14.png" class="img-fluid" width="400"></p>
+<ul>
+<li>Or, alternatively, as in the following figure. Such a visualization can help to identify shifts in nighttime maxima.</li>
+</ul>
+<p><img src="assets/images/recommendations_k_15.png" class="img-fluid" width="400"></p>
+<ul>
+<li>If sudden shifts are detected, the data set can be divided using the ‘Filter’ section.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

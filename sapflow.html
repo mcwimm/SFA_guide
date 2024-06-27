@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marie-Christin Wimmler">
 
-<title>The SapFlowAnalyzer User Guide – SFA User Guide</title>
+<title>Sap Flow – SFA User Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,9 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      SFA User Guide
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settings.html">App navigation</a></li><li class="breadcrumb-item"><a href="./sapflow.html">Sap Flow</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sapflow.html" class="sidebar-item-text sidebar-link">
+  <a href="./sapflow.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Sap Flow</span></a>
   </div>
 </li>
@@ -172,28 +169,30 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sap-flow-metrics" id="toc-sap-flow-metrics" class="nav-link active" data-scroll-target="#sap-flow-metrics">Sap Flow Metrics</a>
+  <ul class="collapse">
+  <li><a href="#tree-water-use" id="toc-tree-water-use" class="nav-link" data-scroll-target="#tree-water-use">Tree Water Use</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settings.html">App navigation</a></li><li class="breadcrumb-item"><a href="./sapflow.html">Sap Flow</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">The SapFlowAnalyzer User Guide</h1>
-<p class="subtitle lead">Analyzing Heat Field Deformation Sap Flow Data</p>
+<h1 class="title">Sap Flow</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Marie-Christin Wimmler </p>
-          </div>
-  </div>
     
   
     
@@ -204,9 +203,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The <strong>Sap Flow Analyzer</strong> (SFA) is a R Shiny app to process sap flow data recorded with the Heat Field Deformation (HFD) method. HFD is a thermodynamic method to measure sap flow using a continuous heating system (<a href="https://doi.org/10.1093/treephys/26.10.1277">Nadezhdina et al., 2006</a>; <a href="https://doi.org/10.3832/ifor2381-011">Nadezhdina, 2018</a>). With a needle-like heater a heat field is created across the stem and the heat distribution is measured with three needle-like sensors. A needle sensor can have multiple, evenly distributed, thermometers which record radial flow profile. Based on the ratio of temperature gradients around the heater in axial (dTSym) and tangential (dTas) directions, sap flow metrics (sap flow per section, sap flow density), sap flow rate and tree water use can be estimated. The method requires to determine a calibration value (<em>K</em>) for each tree and thermometer. With the SFA, data can be cleaned or filtered, <em>K</em> can be determined and sap flow per section can be scaled to sap flow and total tree water use.</p>
+<section id="sap-flow-metrics" class="level1">
+<h1>Sap Flow Metrics</h1>
+<p>This menu item shows sap flow metrics as diurnal flow and as radial profile. What is shown in box <code>Figures</code> needs to be defined in box <code>Settings</code>.</p>
+<p>In the drop down menu ‘y-axis’ (box <code>Settings</code>), the user can choose which metric is shown, namely sap flow index (SFI), sap flow per section (SFS) or sap flow density (SFD). The style options define the appearance of the figure, i.e.&nbsp;whether all data is presented in one figure (‘Normal’), in different panels for thermometer position or day of the year (‘Facet wrap’) or if thermometers should be grouped. In the latter case, names of the groups and the associated thermometer positions must be provided.</p>
+<p>The radio buttons under ‘SFS-formula’ define which formula is used to calculate SFS and hence, SFD. Detailed information on the use of those formulas is given in <a href="https://doi.org/10.1016/j.envexpbot.2017.04.005">Nadezhdina and Nadezhdin, 2017</a> and <em>Wimmler et al.&nbsp;(submitted)</em>. If the radio button ‘Negative’ is chosen, the negative formula is applied to each recording with SFI below a certain threshold. The default threshold for all thermometer positions is 0°C but can be customized either with a general threshold or for each thermometer position individually.</p>
+<section id="tree-water-use" class="level2">
+<h2 class="anchored" data-anchor-id="tree-water-use">Tree Water Use</h2>
+<p>Sap flow rate and daily tree water can be calculated using three different upscaling methods (box <code>Settings</code>, methods are described in Wimmler et al.&nbsp;2022). Upscaling is based on sap wood depth, thus the correct definition of wood properties is essential (Settings &gt; Measuring environment &gt; Wood properties).</p>
+<p>The tab ‘Diurnal pattern’ shows the total sap flow rate of a tree (or stem) over time, while tabs ‘Daily balance’ and ‘Radial profile’ show the total tree water use, which is calculated as the area under the curve of the sap flow rate (box <code>Figures</code>).</p>
+<p>The tree water use per day is shown in the table in box <code>Tree water use</code>.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

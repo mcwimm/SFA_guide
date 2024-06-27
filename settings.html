@@ -134,37 +134,53 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./settings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Settings</span></a>
+  <a href="./kvalue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>K</em> parameter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./kvalue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">K parameter</span></a>
+  <a href="./sapflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sap Flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">sapflow.qmd</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">uncertainty.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uncertainty</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
- <span class="menu-text">trouble.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./trouble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
- <span class="menu-text">recommendations.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./recommendations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommendations</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#box-measuring-environment" id="toc-box-measuring-environment" class="nav-link active" data-scroll-target="#box-measuring-environment">Box: Measuring environment</a></li>
+  <li><a href="#box-save-settings" id="toc-box-save-settings" class="nav-link" data-scroll-target="#box-save-settings">Box: Save settings</a></li>
+  <li><a href="#box-project" id="toc-box-project" class="nav-link" data-scroll-target="#box-project">Box: Project</a></li>
+  <li><a href="#box-file-output-optional" id="toc-box-file-output-optional" class="nav-link" data-scroll-target="#box-file-output-optional">Box: File output (optional)</a></li>
+  <li><a href="#box-visualization-optional" id="toc-box-visualization-optional" class="nav-link" data-scroll-target="#box-visualization-optional">Box: Visualization (optional)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -188,9 +204,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In the second menu item, the project settings are defined. All project settings are optional but strongly recommended for the efficient use of the SFA.</p>
+<p>The second menu item defines the project settings. All project settings are optional, but highly recommended for efficient use of SFA.</p>
+<section id="box-measuring-environment" class="level2">
+<h2 class="anchored" data-anchor-id="box-measuring-environment">Box: Measuring environment</h2>
+<p>In this section of the application, the user defines the wood and sensor properties. Wood and sensor properties are critical to the calculation of SFD, SF, or TWU because they determine the position of each thermometer.</p>
+<p>Wood properties describe, among other things, the stem geometry used to estimate thermometer positions. If known, accurate sapwood and heartwood depth measurements can be provided and used instead. Sensor properties describe needle spacing and needle penetration depth.</p>
+<p><img src="assets/images/settings_measure_1.png" class="img-fluid" width="400"></p>
+<p>The calculated positions are displayed at the bottom of this box.</p>
+<p><img src="assets/images/settings_measure_2.png" class="img-fluid" width="400"></p>
+<p>Thermometer positions can also be defined manually.</p>
+<p>The definition of wood and sensor properties is only required, if the recordings are scaled to SFD, SF or TWU.</p>
+</section>
+<section id="box-save-settings" class="level2">
+<h2 class="anchored" data-anchor-id="box-save-settings">Box: Save settings</h2>
+<p>Settings made on this page can be saved as R data file (.rds) and reused later (see #Data).</p>
+</section>
+<section id="box-project" class="level2">
+<h2 class="anchored" data-anchor-id="box-project">Box: Project</h2>
+<p>The user can create a project where all data will be stored during the session. This is done by selecting a project directory.</p>
+<p>To create a project, press ‘Folder select’ to browse to the directory where all project files will be stored. Select a volume to browse (on Windows this is usually the working directory and the main drive, <strong>&lt;1&gt;</strong>). Select a project destination folder by clicking it’s name (<strong>&lt;2&gt;</strong>). You can also create a new subfolder by clicking <strong>&lt;3&gt;</strong>, entering a name and confirming by clicking the plus sign <strong>&lt;4&gt;</strong>. Finally, select the folder by clicking on ‘select’ <strong>&lt;5&gt;</strong>.</p>
+<p><img src="assets/images/settings_project.png" class="img-fluid"></p>
+<p>After selecting a project destination folder, press ‘Create/set project’. The application will automatically create two subdirectories: ‘graphics’ and ‘csv-files’, where all processed files will be saved. If no project is created, all results (csv-files and graphics) will be saved in the root directory of the application, which may be in the temporary data. If the project was created successfully, the project name is displayed in the upper right corner of the SFA. The path to the project directory will be displayed. If no project was created, the path to the root directory is displayed.</p>
+</section>
+<section id="box-file-output-optional" class="level2">
+<h2 class="anchored" data-anchor-id="box-file-output-optional">Box: File output (optional)</h2>
+<p>File Output box allows the user to define - the format in which data files will be exported (csv, xls) - Note that these files will be saved in the csv file project folder regardless of the selected format. - the format in which images will be saved (jpeg, rdata, pdf). - the format in which all processed data files are exported (csv or excel, they are saved in the csv files folder of the project). - a title added to each saved image, e.g.&nbsp;the tree species studied - a prefix added to the name of each saved file</p>
+</section>
+<section id="box-visualization-optional" class="level2">
+<h2 class="anchored" data-anchor-id="box-visualization-optional">Box: Visualization (optional)</h2>
+<p>In the Visualization box, you can define a scheme (<a href="https://doi.org/10.1007/978-0-387-98141-3">Wickham, 2016</a>) and a <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis color palette</a> to be used in all graphics.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

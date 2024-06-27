@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marie-Christin Wimmler">
 
-<title>The SapFlowAnalyzer User Guide – SFA User Guide</title>
+<title>Visualization – SFA User Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -180,20 +179,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The SapFlowAnalyzer User Guide</h1>
-<p class="subtitle lead">Analyzing Heat Field Deformation Sap Flow Data</p>
+<h1 class="title">Visualization</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Marie-Christin Wimmler </p>
-          </div>
-  </div>
     
   
     
@@ -204,7 +196,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The <strong>Sap Flow Analyzer</strong> (SFA) is a R Shiny app to process sap flow data recorded with the Heat Field Deformation (HFD) method. HFD is a thermodynamic method to measure sap flow using a continuous heating system (<a href="https://doi.org/10.1093/treephys/26.10.1277">Nadezhdina et al., 2006</a>; <a href="https://doi.org/10.3832/ifor2381-011">Nadezhdina, 2018</a>). With a needle-like heater a heat field is created across the stem and the heat distribution is measured with three needle-like sensors. A needle sensor can have multiple, evenly distributed, thermometers which record radial flow profile. Based on the ratio of temperature gradients around the heater in axial (dTSym) and tangential (dTas) directions, sap flow metrics (sap flow per section, sap flow density), sap flow rate and tree water use can be estimated. The method requires to determine a calibration value (<em>K</em>) for each tree and thermometer. With the SFA, data can be cleaned or filtered, <em>K</em> can be determined and sap flow per section can be scaled to sap flow and total tree water use.</p>
+<p>All produced figures can be downloaded. The format is either jpeg, rdata or pdf and is defined under ‘Settings &gt; File output &gt; Figure format’. A general figure title and appendix to figure files can be defined under ‘Figure title’ and ‘File appendix’ in the same box. The style of figures can be customized under ‘Settings &gt; Visualization’. Downloading figures as rdata file allows to load the figure-object to the R environment again and process the figure according to user demands.</p>
+<p>For some figures, special settings are available. An explanation to those options is listed below.</p>
+<ul>
+<li><strong>Facet wrap</strong> Shows subsets of data presented in individual panels
+<ul>
+<li><strong>Facet</strong> variable that is arranged in different panels, e.g.&nbsp;day of the year or thermometer positions</li>
+<li><strong>No.&nbsp;colums</strong> Number of columns presented in one row</li>
+<li><strong>Scales</strong> Description by (<a href="https://ggplot2-book.org/index.html">Wickham, Navarro and Pedersen, 2022</a>)
+<ul>
+<li>“scales =”fixed”: x and y scales are fixed across all panels.</li>
+<li>scales = “free_x”: the x scale is free, and the y scale is fixed.</li>
+<li>scales = “free_y”: the y scale is free, and the x scale is fixed.</li>
+<li>scales = “free”: x and y scales vary across panels.”</li>
+</ul></li>
+</ul></li>
+<li><strong>Facet grid</strong> Similar to facet wrap. Presents data as 2d grid, defined by two variables.</li>
+<li><strong>Scales</strong>
+<ul>
+<li><strong>Free</strong> x and y scale is free</li>
+<li><strong>Fixed</strong> x and/ or y scale can be customized</li>
+</ul></li>
+</ul>
 
 
 

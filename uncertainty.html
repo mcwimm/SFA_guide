@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Marie-Christin Wimmler">
 
-<title>The SapFlowAnalyzer User Guide – SFA User Guide</title>
+<title>Uncertainty – SFA User Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,9 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      SFA User Guide
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settings.html">App navigation</a></li><li class="breadcrumb-item"><a href="./uncertainty.html">Uncertainty</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./uncertainty.html" class="sidebar-item-text sidebar-link">
+  <a href="./uncertainty.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Uncertainty</span></a>
   </div>
 </li>
@@ -172,28 +169,28 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#individual" id="toc-individual" class="nav-link active" data-scroll-target="#individual">Individual</a></li>
+  <li><a href="#cummulative" id="toc-cummulative" class="nav-link" data-scroll-target="#cummulative">Cummulative</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settings.html">App navigation</a></li><li class="breadcrumb-item"><a href="./uncertainty.html">Uncertainty</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">The SapFlowAnalyzer User Guide</h1>
-<p class="subtitle lead">Analyzing Heat Field Deformation Sap Flow Data</p>
+<h1 class="title">Uncertainty</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Marie-Christin Wimmler </p>
-          </div>
-  </div>
     
   
     
@@ -204,9 +201,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The <strong>Sap Flow Analyzer</strong> (SFA) is a R Shiny app to process sap flow data recorded with the Heat Field Deformation (HFD) method. HFD is a thermodynamic method to measure sap flow using a continuous heating system (<a href="https://doi.org/10.1093/treephys/26.10.1277">Nadezhdina et al., 2006</a>; <a href="https://doi.org/10.3832/ifor2381-011">Nadezhdina, 2018</a>). With a needle-like heater a heat field is created across the stem and the heat distribution is measured with three needle-like sensors. A needle sensor can have multiple, evenly distributed, thermometers which record radial flow profile. Based on the ratio of temperature gradients around the heater in axial (dTSym) and tangential (dTas) directions, sap flow metrics (sap flow per section, sap flow density), sap flow rate and tree water use can be estimated. The method requires to determine a calibration value (<em>K</em>) for each tree and thermometer. With the SFA, data can be cleaned or filtered, <em>K</em> can be determined and sap flow per section can be scaled to sap flow and total tree water use.</p>
+<section id="individual" class="level1">
+<h1>Individual</h1>
+<p>This section allows to estimate the uncertainty of the sap flow metrics caused by the following inputs individually: thermal diffusivity (Dnom), relative needle positions (Zax/Ztg), <em>K</em> estimates and sapwood depth. By defining the error (%) of these parameters, the sap flow metrics are recalculated. Uncertainty is displayed as absolute and relative values.</p>
+</section>
+<section id="cummulative" class="level1">
+<h1>Cummulative</h1>
+<p>This section allows to estimate the uncertainty of the sap flow and tree water use caused by the following cumulated inputs: thermal diffusivity (Dnom), relative needle positions (Zax/Ztg), <em>K</em> estimates and sapwood depth. By defining the error (%) of these parameters, sap flow and tree water use are recalculated. Uncertainty is displayed as absolute and relative values.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
