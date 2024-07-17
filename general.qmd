@@ -20,8 +20,11 @@ For some figures, special settings are available. An explanation to those option
 -   **Scales**
     -   **Free** x and y scale is free
     -   **Fixed** x and/ or y scale can be customized
-    
-    
+
+## rdata files
+
+This format allows data to be saved as an R object. In SFA, this option is available for all figures. This allows you to modify figures individually in R after downloading them. They can be loaded into R with ``load("<file_name>")``. The name of each object is ``plotObject``.
+
 # Downloads
 
 Files and images can be downloaded one at a time using the individual download buttons, or all at once using the Download button in the menu to the left.
