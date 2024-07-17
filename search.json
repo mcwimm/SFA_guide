@@ -174,7 +174,17 @@
     "href": "general.html",
     "title": "General",
     "section": "",
-    "text": "Visualization\nAll produced figures can be downloaded. The format is either jpeg, rdata or pdf and is defined under ‘Settings &gt; File output &gt; Figure format’. A general figure title and appendix to figure files can be defined under ‘Figure title’ and ‘File appendix’ in the same box. The style of figures can be customized under ‘Settings &gt; Visualization’. Downloading figures as rdata file allows to load the figure-object to the R environment again and process the figure according to user demands.\nFor some figures, special settings are available. An explanation to those options is listed below.\n\nFacet wrap Shows subsets of data presented in individual panels\n\nFacet variable that is arranged in different panels, e.g. day of the year or thermometer positions\nNo. colums Number of columns presented in one row\nScales Description by (Wickham, Navarro and Pedersen, 2022)\n\n“scales =”fixed”: x and y scales are fixed across all panels.\nscales = “free_x”: the x scale is free, and the y scale is fixed.\nscales = “free_y”: the y scale is free, and the x scale is fixed.\nscales = “free”: x and y scales vary across panels.”\n\n\nFacet grid Similar to facet wrap. Presents data as 2d grid, defined by two variables.\nScales\n\nFree x and y scale is free\nFixed x and/ or y scale can be customized\n\n\n\n\nDownloads\nFiles and images can be downloaded one at a time using the individual download buttons, or all at once using the Download button in the menu to the left.",
+    "text": "All produced figures can be downloaded. The format is either jpeg, rdata or pdf and is defined under ‘Settings &gt; File output &gt; Figure format’. A general figure title and appendix to figure files can be defined under ‘Figure title’ and ‘File appendix’ in the same box. The style of figures can be customized under ‘Settings &gt; Visualization’. Downloading figures as rdata file allows to load the figure-object to the R environment again and process the figure according to user demands.\nFor some figures, special settings are available. An explanation to those options is listed below.\n\nFacet wrap Shows subsets of data presented in individual panels\n\nFacet variable that is arranged in different panels, e.g. day of the year or thermometer positions\nNo. colums Number of columns presented in one row\nScales Description by (Wickham, Navarro and Pedersen, 2022)\n\n“scales =”fixed”: x and y scales are fixed across all panels.\nscales = “free_x”: the x scale is free, and the y scale is fixed.\nscales = “free_y”: the y scale is free, and the x scale is fixed.\nscales = “free”: x and y scales vary across panels.”\n\n\nFacet grid Similar to facet wrap. Presents data as 2d grid, defined by two variables.\nScales\n\nFree x and y scale is free\nFixed x and/ or y scale can be customized\n\n\n\n\nThis format allows data to be saved as an R object. In SFA, this option is available for all figures. This allows you to modify figures individually in R after downloading them. They can be loaded into R with load(\"&lt;file_name&gt;\"). The name of each object is plotObject.",
+    "crumbs": [
+      "General"
+    ]
+  },
+  {
+    "objectID": "general.html#rdata-files",
+    "href": "general.html#rdata-files",
+    "title": "General",
+    "section": "",
+    "text": "This format allows data to be saved as an R object. In SFA, this option is available for all figures. This allows you to modify figures individually in R after downloading them. They can be loaded into R with load(\"&lt;file_name&gt;\"). The name of each object is plotObject.",
     "crumbs": [
       "General"
     ]
